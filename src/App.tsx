@@ -1,11 +1,12 @@
-import { Counter } from "./components/Counter";
+import Calculator from "./components/Calculator";
+import Results from "./components/Results";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <Counter />
-    </div>
+    <main className="bg-slate-100 flex justify-center items-center h-screen">
+      <Calculator />
+      <Results />
+    </main>
   );
 };
 
