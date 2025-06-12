@@ -1,13 +1,15 @@
 {
   "name": "mortgage-calculator",
-  "private": true,
+  "homepage": "https://jacobgpromo.github.io/mortgage-calculator",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
