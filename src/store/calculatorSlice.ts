@@ -47,6 +47,7 @@ export const counterSlice = createSlice({
       state.mortgageType = "";
       state.monthly = "";
       state.totalAmount = "";
+      state.showResults = false;
     },
     calculateResult: (state) => {
       const principal = parseFloat(state.amount);

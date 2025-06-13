@@ -23,7 +23,7 @@ const RadioButton = ({ title, selectedType, onChange }: Props) => {
       <label
         htmlFor={title}
         className="flex items-center w-full p-3 pl-8 border border-slate-500 rounded-lg cursor-pointer
-                 hover:border-primary-lime peer-checked:border-primary-lime"
+                 hover:border-primary-lime peer-checked:border-primary-lime peer-checked:bg-lime-faded"
       >
         <span className="text-sm font-bold text-slate-900">{title}</span>
       </label>

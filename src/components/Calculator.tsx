@@ -48,12 +48,18 @@ const Calculator = () => {
   };
 
   return (
-    <div className="bg-white p-10 rounded-xl w-xl">
-      <div className="flex justify-between mb-6">
+    <div className="bg-white p-6 sm:p-10 rounded-xl w-full max-w-full">
+      <div className="flex flex-col justify-between mb-6 lg:flex-row">
         <h1 className="text-2xl font-bold">Mortgage Calculator</h1>
         <p
           className="underline cursor-pointer"
-          onClick={() => dispatch(clearAll())}
+          onClick={() => {
+            dispatch(clearAll());
+            setAmountError(false);
+            setTermError(false);
+            setRateError(false);
+            setMortgageTypeError(false);
+          }}
         >
           Clear All
         </p>
@@ -69,7 +75,7 @@ const Calculator = () => {
           error={amountError}
         />
       </div>
-      <div className="grid grid-cols-2 mb-6 gap-4">
+      <div className="grid grid-cols-1 mb-6 gap-4 lg:grid-cols-2">
         <Input
           title="Mortgage Term Years"
           className="ml-4 right-0.5 rounded-r-lg "

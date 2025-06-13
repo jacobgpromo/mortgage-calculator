@@ -9,8 +9,8 @@ const App = () => {
     (state: RootState) => state.calculator.showResults
   );
   return (
-    <main className="bg-slate-100 flex justify-center items-center h-screen ">
-      <div className="h-xl flex shadow-lg bg-white">
+    <main className="bg-slate-100 flex justify-center items-center min-h-screen overflow-x-hidden">
+      <div className="flex flex-col w-full max-w-6xl mx-auto shadow-lg bg-white lg:flex-row">
         <Calculator />
         {showResults ? <Results /> : <EmptyResults />}
       </div>

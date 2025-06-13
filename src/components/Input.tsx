@@ -1,10 +1,11 @@
 import { FaDollarSign } from "react-icons/fa";
 import { FaPercentage } from "react-icons/fa";
 import { FaCalendarDays } from "react-icons/fa6";
+import { useState } from "react";
 
 interface Props {
   title: string;
-  className?: string;
+  className: string;
   inputClass?: string;
   value: string;
   icon: "money" | "years" | "percentage";
@@ -21,6 +22,7 @@ const Input = ({
   icon,
   error,
 }: Props) => {
+  const [isFocused, setIsFocused] = useState(false);
   return (
     <div className="relative group">
       <div className="mb-4">
@@ -29,9 +31,9 @@ const Input = ({
         </label>
       </div>
       <div
-        className={`absolute p-[16px] pb-[15.5px] top-10.5 ${
-          error ? "bg-red-500" : "bg-slate-100 "
-        } ${className} group-focus:bg-primary-lime`}
+        className={`absolute p-[16px] pb-[14.5px] top-10.5 ${
+          error ? "bg-red-500" : isFocused ? "bg-primary-lime" : "bg-slate-100"
+        } ${className}`}
       >
         {icon == "money" && (
           <FaDollarSign className={` ${error && "text-white"}`} />
@@ -53,6 +55,8 @@ const Input = ({
         id="amount"
         value={value}
         onChange={onChange}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
       />
       {error && (
         <p className="text-red-500 text-sm mt-1">This field is required</p>
